@@ -1,0 +1,12 @@
+streamlit
+pandas
+requests
+urllib3
+geopandas
+shapely
+docxtpl
+folium
+html2image
+beautifulsoup4
+geopy
+openpyxl
