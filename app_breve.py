@@ -189,7 +189,13 @@ def gerar_print_mapa(poligono_row):
     png_path = os.path.join(temp_dir, "mapa_temp.png")
     
     m.save(html_path)
-    hti = Html2Image(output_path=temp_dir)
+    
+    # Adicionamos as 'flags' de segurança do Linux para o Chrome Invisível não travar na Nuvem
+    hti = Html2Image(
+        output_path=temp_dir, 
+        custom_flags=['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+    )
+    
     hti.screenshot(html_file=html_path, save_as="mapa_temp.png", size=(800, 500))
     return png_path
 
